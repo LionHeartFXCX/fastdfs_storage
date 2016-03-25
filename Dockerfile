@@ -38,11 +38,13 @@ RUN tar zxvf ${FASTDFS_PATH}/download/zlib-${ZLIB_VERSION}.tar.gz -C ${FASTDFS_P
 
 WORKDIR ${FASTDFS_PATH}/libfastcommon
 
-RUN ["/bin/bash", "-c", "./make.sh && ./make.sh install"]
+RUN ["/bin/bash", "-c", "./make.sh"]
+RUN ["/bin/bash", "-c", "./make.sh install"]
 
 WORKDIR ${FASTDFS_PATH}/fastdfs
 
-RUN ["/bin/bash", "-c", "./make.sh && ./make.sh install"]
+RUN ["/bin/bash", "-c", "./make.sh"]
+RUN ["/bin/bash", "-c", "./make.sh install"]
 
 WORKDIR ${FASTDFS_PATH}/nginx/nginx-${NGINX_VERSION}
 
