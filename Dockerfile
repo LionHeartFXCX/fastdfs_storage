@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM fedora
 
 MAINTAINER LionHeart <LionHeart_fxc@163.com>
 
@@ -11,13 +11,13 @@ ENV FASTDFS_PATH=/fastDFS \
     OPENSSL_VERSION=1.0.2g
 
 #get all the dependences except nginx's service	
-RUN apt-get update && apt-get install -y \
-    g++ \
+RUN yum -y update && yum -y install \
+    gcc-c++ \
     gcc \
     git \
     make \
     wget \
- && rm -rf /var/lib/apt/lists/*
+ && yum clean all
 
 #create the dir 
 RUN mkdir -p ${FASTDFS_PATH}/libfastcommon \
