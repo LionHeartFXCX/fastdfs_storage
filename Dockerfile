@@ -12,7 +12,7 @@ ENV FASTDFS_PATH=/fastDFS \
 
 #get all the dependences except nginx's service	
 RUN yum -y update && yum -y install \
-    g++ \
+    gcc-c++ \
     gcc \
     git \
     make \
