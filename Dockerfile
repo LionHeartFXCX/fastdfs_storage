@@ -1,4 +1,4 @@
-FROM debian
+FROM ubuntu
 
 MAINTAINER LionHeart <LionHeart_fxc@163.com>
 
@@ -12,7 +12,7 @@ ENV FASTDFS_PATH=/fastDFS \
 
 #get all the dependences except nginx's service	
 RUN apt-get update && apt-get install -y \
-    build-essential \
+    g++ \
     gcc \
     git \
     make \
