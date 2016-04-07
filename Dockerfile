@@ -65,4 +65,11 @@ RUN git clone https://github.com/happyfish100/fastdfs-nginx-module.git ${FASTDFS
 
 EXPOSE 23000 80
 
+ADD start.sh /usr/bin/
+
+#make the start.sh executable
+RUN chmod 777 /usr/bin/start.sh
+
+ENTRYPOINT ["/usr/bin/start.sh"]
+
 MAINTAINER LionHeart <LionHeart_fxc@163.com>
