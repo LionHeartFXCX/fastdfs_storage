@@ -37,16 +37,19 @@ done
 if [ $TIMES -gt 0 ]; then
     echo "the storage node started successfully at $(date +%Y-%m-%d_%H:%M)"
 	
+	# give the detail log address
+    echo "please have a look at the log detail at $FASTDFS_LOG_FILE and $NGINX_ERROR_LOG"
+
+    # leave balnk lines to differ from next log.
+    echo
+    echo
+	
 	# make the container have foreground process(primary commond!)
     tail -F --pid=`cat $STORAGE_PID_NUMBER` /dev/null
 # else print the error.
 else
     echo "the storage node started failed at $(date +%Y-%m-%d_%H:%M)"
+	echo "please have a look at the log detail at $FASTDFS_LOG_FILE and $NGINX_ERROR_LOG"
+	echo
+    echo
 fi
-
-# give the detail log address
-echo "please have a look at the log detail at $FASTDFS_LOG_FILE and $NGINX_ERROR_LOG"
-
-# leave balnk lines to differ from next log.
-echo
-echo
